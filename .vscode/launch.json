@@ -8,7 +8,7 @@
             "type": "java",
             "name": "MyFirstJavaProgram",
             "request": "launch",
-            "mainClass": "$MyFirstJavaProgram"
+            "mainClass": "${MyFirstJavaProgram}"
         }
     ]
 }
