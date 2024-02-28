@@ -6,7 +6,7 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Current File",
+            "name": "MyFirstJavaProgram",
             "request": "launch",
             "mainClass": "MyFirstJavaProgram"
         }
