@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "Corpo.App",
+            "projectName": "linguagemdeprogI_b074ab96"
+        },
+        {
+            "type": "java",
             "name": "MyFirstJavaProgram",
             "request": "launch",
             "mainClass": "${MyFirstJavaProgram}"
