@@ -12,8 +12,6 @@ import javafx.collections.FXCollections;
 public class ImageController {
     //cachorro
     @FXML
-    private Label respotcachorro;
-    @FXML
     private Button cadastrarcachorro;
     @FXML
     private TextField nomecachorro;
@@ -27,8 +25,6 @@ public class ImageController {
     private ObservableList<String> cachorroLista = FXCollections.observableArrayList();
     //aviao
     @FXML
-    private Label respotaviao;
-    @FXML
     private Button cadastraraviao;
     @FXML
     private TextField modeloaviao;
@@ -36,9 +32,11 @@ public class ImageController {
     private TextField tipoaviao;
     @FXML
     private TextField velmaxaviao;
-    //comidas
     @FXML
-    private Label respotcomidas;
+    private ListView<String> aviaoListView;
+    @FXML
+    private ObservableList<String> aviaoLista = FXCollections.observableArrayList();
+    //comidas
     @FXML
     private Button cadastrarcomidas;
     @FXML
@@ -47,27 +45,67 @@ public class ImageController {
     private TextField macrocomida;
     @FXML
     private TextField gostocomida;
+    @FXML
+    private ListView<String> comidaListView;
+    @FXML
+    private ObservableList<String> comidaLista = FXCollections.observableArrayList();
 
 
     @FXML
-    public void onCachorroclick() {
-
+    public void initialize() {
+        cadastrarcachorro.setOnAction(event -> {
+            // Obter os valores inseridos pelo usuário
             String nome = nomecachorro.getText();
             String raca = racacachorro.getText();
             String cor = corcachorro.getText();
 
+            // Criar um novo objeto Cachorro
+            Cachorro cachorro = new Cachorro(nome, raca, cor);
 
-    }
-    @FXML
-    public void onAviaoclick() {
+            // Adicionar o cachorro à lista
+            cachorro.setListCachorro();
 
+            // Adicionar o cachorro à lista
+            cachorroLista.add("Cachorro " + cachorroLista.size() + ": " + cachorro.toString());
 
+            // Atualizar a lista na interface do usuário
+            cachorroListView.setItems(cachorroLista);
+        });
+        cadastraraviao.setOnAction(event -> {
+            // Obter os valores inseridos pelo usuário
+            String modelo = modeloaviao.getText();
+            String tipo = tipoaviao.getText();
+            double velmax = Double.parseDouble(velmaxaviao.getText());
 
-    }
-    @FXML
-    public void onComidasclick() {
+            // Criar um novo objeto Aviao
+            Aviao aviao = new Aviao(modelo, tipo, velmax);
 
+            // Adicionar o avaio à lista
+            aviao.setListAviao();
 
+            // Adicionar o aviao à lista
+            aviaoLista.add("Aviao " + aviaoLista.size() + ": " + aviao.toString());
 
+            // Atualizar a lista na interface do usuário
+            aviaoListView.setItems(aviaoLista);
+        });
+        cadastrarcomidas.setOnAction(event -> {
+            // Obter os valores inseridos pelo usuário
+            String nomec = nomecomida.getText();
+            String macro = macrocomida.getText();
+            String gosto = gostocomida.getText();
+
+            // Criar um novo objeto Comida
+            Comida comida = new Comida(nomec, macro, gosto);
+
+            // Adicionar a comida à lista
+            comida.setListComida();
+
+            // Adicionar a comida à lista
+            comidaLista.add("Comida " + comidaLista.size() + ": " + comida.toString());
+
+            // Atualizar a lista na interface do usuário
+            comidaListView.setItems(comidaLista);
+        });
     }
 }
