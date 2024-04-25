@@ -57,16 +57,6 @@ public class ImageController {
             String cor = corcachorro.getText();
 
 
-        Cachorro cachorro = new Cachorro(nome, raca, cor);
-        cachorro.initData(nome, raca, cor);
-
-        cachorro.setListCachorro();
-
-        cachorroLista.add("Cachorro " + cachorroLista.size());
-
-        respotcachorro.setText(String.valueOf(cachorroLista));
-
-
     }
     @FXML
     public void onAviaoclick() {

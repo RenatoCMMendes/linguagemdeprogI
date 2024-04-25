@@ -12,10 +12,9 @@ import java.util.List;
 
 public class Cachorro {
 
-    private static List<Cachorro> cachorroLista = new ArrayList<>();
-    private final String nome;
-    private final String raca;
-    private final String cor;
+    private  String nome;
+    private  String raca;
+    private  String cor;
 
     public Cachorro(String nome, String raca, String cor) {
         this.nome = nome;
@@ -33,12 +32,5 @@ public class Cachorro {
 
     public String getCor() {
         return cor;
-    }
-
-    public void setListCachorro() {
-        cachorroLista.add(this);
-    }
-    
-    public void initData(String nome, String raca, String cor) {
     }
 }
