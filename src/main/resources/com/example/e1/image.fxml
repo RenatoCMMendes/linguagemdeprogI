@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="419.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.e1.ImageController">
+  <tabs>
+      <Tab text="Image 1">
+          <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                      <ImageView fitHeight="158.0" fitWidth="305.0" layoutX="21.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@cachorros.jpg" />
+                          </image>
+                      </ImageView>
+                      <TextField layoutX="97.0" layoutY="218.0" />
+                      <TextField layoutX="97.0" layoutY="296.0" />
+                      <TextField layoutX="96.0" layoutY="255.0" />
+                      <Button fx:id="cadastrarcachorro" layoutX="96.0" layoutY="331.0" mnemonicParsing="false" onAction="#onCachorroclick" prefHeight="25.0" prefWidth="150.0" text="Cadastrar" />
+                      <Label fx:id="cachorroLista" alignment="TOP_LEFT" layoutX="14.0" layoutY="374.0" prefHeight="83.0" prefWidth="375.0" />
+                      <Label layoutX="35.0" layoutY="222.0" text="Nome" />
+                      <Label layoutX="35.0" layoutY="259.0" text="Raça" />
+                      <Label layoutX="35.0" layoutY="300.0" text="Cor" />
+                  </children></AnchorPane>
+          </content>
+      </Tab>
+      <Tab text="Image 2">
+          <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                      <ImageView fitHeight="158.0" fitWidth="305.0" layoutX="21.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@avioes.jpg" />
+                          </image>
+                      </ImageView>
+                      <TextField layoutX="97.0" layoutY="218.0" />
+                      <TextField layoutX="97.0" layoutY="296.0" />
+                      <TextField layoutX="96.0" layoutY="255.0" />
+                      <Button layoutX="96.0" layoutY="331.0" mnemonicParsing="false" onAction="#onAviaoclick" prefHeight="25.0" prefWidth="150.0" text="Cadastrar" />
+                      <Label layoutX="35.0" layoutY="222.0" text="Modelo" />
+                      <Label layoutX="35.0" layoutY="259.0" text="Tpo" />
+                      <Label layoutX="2.0" layoutY="300.0" text="Velocidade MAX" />
+                  <VBox layoutX="14.0" layoutY="356.0" prefHeight="109.0" prefWidth="346.0" />
+                  </children></AnchorPane>
+          </content>
+      </Tab>
+      <Tab text="Image 3">
+          <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                      <ImageView fitHeight="158.0" fitWidth="305.0" layoutX="21.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@comidas.jpg" />
+                          </image>
+                      </ImageView>
+                      <TextField layoutX="97.0" layoutY="218.0" />
+                      <TextField layoutX="97.0" layoutY="296.0" />
+                      <TextField layoutX="96.0" layoutY="255.0" />
+                      <Button layoutX="96.0" layoutY="331.0" mnemonicParsing="false" onAction="#onComidasclick" prefHeight="25.0" prefWidth="150.0" text="Cadastrar" />
+                      <Label layoutX="35.0" layoutY="222.0" text="Nome" />
+                      <Label layoutX="7.0" layoutY="259.0" text="Macro Nutriente" />
+                      <Label layoutX="35.0" layoutY="300.0" text="Gosto" />
+                  <VBox layoutX="21.0" layoutY="356.0" prefHeight="109.0" prefWidth="346.0" />
+                  </children></AnchorPane>
+          </content>
+      </Tab>
+  </tabs>
+</TabPane>
