@@ -64,7 +64,7 @@
                         <TextField fx:id="nomecomida" layoutX="97.0" layoutY="218.0" promptText="Digite o nome" />
                         <TextField fx:id="macrocomida" layoutX="96.0" layoutY="255.0" promptText="Digite os macros" />
                         <TextField fx:id="gostocomida" layoutX="97.0" layoutY="296.0" promptText="Digite o gosto" />
-                        <Button fx:id="cadastrarcomida" layoutX="96.0" layoutY="331.0" mnemonicParsing="false" onAction="#initialize" prefHeight="25.0" prefWidth="150.0" text="Cadastrar" />
+                        <Button fx:id="cadastrarcomidas" layoutX="96.0" layoutY="331.0" mnemonicParsing="false" onAction="#initialize" prefHeight="25.0" prefWidth="150.0" text="Cadastrar" />
                         <Label layoutX="35.0" layoutY="222.0" text="Nome" />
                         <Label layoutX="35.0" layoutY="259.0" text="Macro" />
                         <Label layoutX="35.0" layoutY="300.0" text="Gosto" />
