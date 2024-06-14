@@ -2,75 +2,55 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="419.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.e1.ImageController">
-    <tabs>
-        <Tab text="Image 1">
-            <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                    <children>
-                        <ImageView fitHeight="158.0" fitWidth="305.0" layoutX="21.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@cachorros.jpg" />
-                            </image>
-                        </ImageView>
-                        <TextField fx:id="nomecachorro" layoutX="97.0" layoutY="218.0" promptText="Digite o nome" />
-                        <TextField fx:id="racacachorro" layoutX="96.0" layoutY="255.0" promptText="Digite a raça" />
-                        <TextField fx:id="corcachorro" layoutX="97.0" layoutY="296.0" promptText="Digite a cor" />
-                        <Button fx:id="cadastrarcachorro" layoutX="96.0" layoutY="331.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Cadastrar" />
-                        <Label layoutX="35.0" layoutY="222.0" text="Nome" />
-                        <Label layoutX="35.0" layoutY="259.0" text="Raça" />
-                        <Label layoutX="35.0" layoutY="300.0" text="Cor" />
-                        <ListView fx:id="cachorroListView" layoutX="35.0" layoutY="370.0" prefHeight="158.0" prefWidth="305.0" />
-                    </children></AnchorPane>
-            </content>
-        </Tab>
-        <Tab text="Image 2">
-            <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                    <children>
-                        <ImageView fitHeight="158.0" fitWidth="305.0" layoutX="21.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@avioes.jpg" />
-                            </image>
-                        </ImageView>
-                        <TextField fx:id="modeloaviao" layoutX="97.0" layoutY="218.0" promptText="Digite o modelo" />
-                        <TextField fx:id="tipoaviao" layoutX="96.0" layoutY="255.0" promptText="Digite o tipo" />
-                        <TextField fx:id="velmaxaviao" layoutX="97.0" layoutY="296.0" promptText="Digite a velocidade max" />
-                        <Button fx:id="cadastraraviao" layoutX="96.0" layoutY="331.0" mnemonicParsing="false" onAction="#initialize" prefHeight="25.0" prefWidth="150.0" text="Cadastrar" />
-                        <Label layoutX="35.0" layoutY="222.0" text="Modelo" />
-                        <Label layoutX="35.0" layoutY="259.0" text="Tipo" />
-                        <Label layoutX="3.0" layoutY="300.0" text="Velocidade MAX" />
-                        <ListView fx:id="aviaoListView" layoutX="35.0" layoutY="370.0" prefHeight="158.0" prefWidth="305.0" />
-                    </children></AnchorPane>
-            </content>
-        </Tab>
-        <Tab text="Image 3">
-            <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                    <children>
-                        <ImageView fitHeight="158.0" fitWidth="305.0" layoutX="21.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@comidas.jpg" />
-                            </image>
-                        </ImageView>
-                        <TextField fx:id="nomecomida" layoutX="97.0" layoutY="218.0" promptText="Digite o nome" />
-                        <TextField fx:id="macrocomida" layoutX="96.0" layoutY="255.0" promptText="Digite os macros" />
-                        <TextField fx:id="gostocomida" layoutX="97.0" layoutY="296.0" promptText="Digite o gosto" />
-                        <Button fx:id="cadastrarcomidas" layoutX="96.0" layoutY="331.0" mnemonicParsing="false" onAction="#initialize" prefHeight="25.0" prefWidth="150.0" text="Cadastrar" />
-                        <Label layoutX="35.0" layoutY="222.0" text="Nome" />
-                        <Label layoutX="35.0" layoutY="259.0" text="Macro" />
-                        <Label layoutX="35.0" layoutY="300.0" text="Gosto" />
-                        <ListView fx:id="comidaListView" layoutX="35.0" layoutY="370.0" prefHeight="158.0" prefWidth="305.0" />
-                    </children></AnchorPane>
-            </content>
-        </Tab>
-    </tabs>
-</TabPane>
+<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.e1.CachorroController">
+    <children>
+        <ImageView fitHeight="158.0" fitWidth="305.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@cachorros.jpg" />
+            </image>
+        </ImageView>
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="30" />
+                <ColumnConstraints percentWidth="70" />
+            </columnConstraints>
+            <children>
+                <Label text="Nome:" />
+                <TextField fx:id="nomeField" GridPane.columnIndex="1" />
+                <Label text="Raça:" GridPane.rowIndex="1" />
+                <TextField fx:id="racaField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Cor:" GridPane.rowIndex="2" />
+                <TextField fx:id="corField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            </children>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+        <HBox spacing="10">
+            <Button onAction="#handleAddCachorro" text="Adicionar" />
+            <Button onAction="#handleUpdateCachorro" text="Atualizar" />
+            <Button onAction="#handleDeleteCachorro" text="Deletar" />
+        </HBox>
+        <TableView fx:id="cachorroTable">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="50" text="ID" />
+                <TableColumn fx:id="nomeColumn" prefWidth="150" text="Nome" />
+                <TableColumn fx:id="racaColumn" prefWidth="150" text="Raça" />
+                <TableColumn fx:id="corColumn" prefWidth="150" text="Cor" />
+            </columns>
+        </TableView>
+    </children>
+</VBox>
